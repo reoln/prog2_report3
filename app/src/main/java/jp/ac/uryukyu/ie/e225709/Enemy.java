@@ -9,7 +9,7 @@ package jp.ac.uryukyu.ie.e225709;
  * Created by tnal on 2016/11/13.
  */
 public class Enemy {
-    public String name;
+    private String name;
     private int hitPoint;
     private int attack;
     private boolean dead;
@@ -21,11 +21,19 @@ public class Enemy {
      * @param attack モンスターの攻撃力
      */
     public Enemy (String name, int maximumHP, int attack) {
-        this.name = name;
+        this.setName(name);
         hitPoint = maximumHP;
         this.attack = attack;
         setDead(false);
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean isDead() {
@@ -44,7 +52,7 @@ public class Enemy {
     public void attack(Hero hero){
         if (this.isDead() == false){
         int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
+        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", getName(), hero.getName(), damage);
         hero.wounded(damage);
         }
     }
@@ -58,7 +66,7 @@ public class Enemy {
         hitPoint -= damage;
         if( hitPoint < 0 ) {
             setDead(true);
-            System.out.printf("モンスター%sは倒れた。\n", name);
+            System.out.printf("モンスター%sは倒れた。\n", getName());
         }
     }
 
