@@ -11,8 +11,16 @@ package jp.ac.uryukyu.ie.e225709;
 public class Hero {
     public String name;
     public int hitPoint;
-    public int attack;
-    public boolean dead;
+    private int attack;
+    private boolean dead;
+    
+    public boolean isDead() {
+        return dead;
+    }
+
+    public void setDead(boolean dead) {
+        this.dead = dead;
+    }
 
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
@@ -51,4 +59,6 @@ public class Hero {
             System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", name);
         }
     }
+
+    
 }
