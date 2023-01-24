@@ -3,7 +3,7 @@ package jp.ac.uryukyu.ie.e225709;
 public class LivingThing {
     public String name;
     public int hitPoint;
-    public int attack;
+    public static int attack;
     public boolean dead;
 
     public boolean isDead() {
@@ -29,7 +29,7 @@ public class LivingThing {
     public void setDead(boolean dead) {
         this.dead = dead;
     }
-    
+
     public void attack(LivingThing opponent){
         if (this.dead == false){
         int damage = (int)(Math.random() * attack);
@@ -51,6 +51,7 @@ public class LivingThing {
             System.out.printf("%sは倒れた。\n", name);
         }
     }
+
 
 }
 

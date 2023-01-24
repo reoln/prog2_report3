@@ -19,7 +19,7 @@ public class Enemy extends LivingThing{
     public Enemy (String name, int maximumHP, int attack) {
         this.setName(name);
         hitPoint = maximumHP;
-        this.attack = attack;
+        Enemy.attack = attack;
         setDead(false);
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
