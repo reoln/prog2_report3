@@ -32,5 +32,4 @@ public class Enemy extends LivingThing{
             System.out.printf("モンスター%sは倒れた。\n", name);
         }
     }
-
 }

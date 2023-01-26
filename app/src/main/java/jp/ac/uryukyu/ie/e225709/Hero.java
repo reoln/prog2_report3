@@ -24,7 +24,6 @@ public class Hero extends LivingThing{
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);
     }
  
-
     @Override
     public void wounded(int damage){
         hitPoint -= damage;
